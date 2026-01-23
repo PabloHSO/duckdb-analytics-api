@@ -1,27 +1,47 @@
 from pathlib import Path
 from app.core.database import get_connection
 
-# Define o caminho do arquivo CSV de vendas
-CSV_PATH = Path("data/samples/sales.csv")
 
-# Função para ingerir o dataset de vendas no banco de dados DuckDB
-def ingest_sales():
-    conn = get_connection() # Obtém a conexão com o banco de dados DuckDB
+class DatasetService:
 
-    # Cria a tabela de vendas se não existir
-    conn.execute("""
-        CREATE TABLE IF NOT EXISTS sales (
-            order_id INTEGER,
-            user_id INTEGER,
-            amount DOUBLE,
-            created_at DATE
-        )
-    """)
+    @staticmethod
+    def ingest_sales() -> dict:
+        """
+        Ingestão padrão do dataset de vendas (demo).
+        """
+        csv_path = Path("data/samples/sales.csv")
+        conn = get_connection()
 
-    # Ingesta os dados do arquivo CSV na tabela de vendas
-    conn.execute(f"""
-        INSERT INTO sales
-        SELECT * FROM read_csv_auto('{CSV_PATH}')
-    """)
+        conn.execute("""
+            CREATE TABLE IF NOT EXISTS sales (
+                order_id INTEGER,
+                user_id INTEGER,
+                amount DOUBLE,
+                created_at DATE
+            )
+        """)
 
-    return {"status": "sales dataset ingested successfully"}
+        conn.execute(f"""
+            INSERT INTO sales
+            SELECT * FROM read_csv_auto('{csv_path}')
+        """)
+
+        return {"status": "sales dataset ingested successfully"}
+
+    @staticmethod
+    def load_csv_as_table(table_name: str, file_path: str) -> int:
+        """
+        Carrega qualquer CSV como tabela DuckDB.
+        """
+        conn = get_connection()
+
+        conn.execute(f"""
+            CREATE OR REPLACE TABLE {table_name} AS
+            SELECT * FROM read_csv_auto('{file_path}')
+        """)
+
+        rows = conn.execute(
+            f"SELECT COUNT(*) FROM {table_name}"
+        ).fetchone()[0]
+
+        return rows
