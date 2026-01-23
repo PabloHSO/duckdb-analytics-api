@@ -1,11 +1,13 @@
 from fastapi import APIRouter
+from app.core.database import get_connection
 
-router = APIRouter()
+router = APIRouter(prefix="/health", tags=["Health"])
 
-# Health check endpoint - verifica o status do serviço
 @router.get("/")
 def health_check():
+    conn = get_connection()
+    conn.execute("SELECT 1")
     return {
         "status": "ok",
-        "service": "duckdb-analytics-api"
+        "database": "duckdb",
     }
