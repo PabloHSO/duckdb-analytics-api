@@ -28,3 +28,8 @@ jobs:
       run: |
         python -c "import duckdb; print('DuckDB OK')"
         python -c "from app.main import app; print('FastAPI OK')"
+
+    - name: Run tests
+      run: |
+        pytest -v
+        pytest --cov=app --cov-report=term-missing
