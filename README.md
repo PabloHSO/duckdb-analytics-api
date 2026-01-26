@@ -6,7 +6,6 @@
   <img src="docs/images/banner_duckdb.png" alt="DuckDB Analytics API Banner" width="100%">
 </p>
 
-<h1 align="center">🚀 DuckDB Analytics API</h1>
 
 <p align="center">
   <b>Embedded Analytics API com FastAPI, DuckDB, Prometheus e Grafana</b><br>
