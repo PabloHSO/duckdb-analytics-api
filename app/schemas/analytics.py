@@ -13,3 +13,14 @@ class TopUser(BaseModel):
 class MonthlyRevenue(BaseModel):
     month: str
     revenue: float
+
+class TotalRevenueResponse(BaseModel):
+    total_revenue: float
+
+class RevenueByDayItem(BaseModel):
+    date: date
+    revenue: float
+
+class TopUserItem(BaseModel):
+    user_id: int
+    total_spent: float
