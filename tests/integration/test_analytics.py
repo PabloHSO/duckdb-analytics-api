@@ -3,6 +3,9 @@ from app.main import app
 
 client = TestClient(app)
 
+# ----------------------------------------
+# Teste de endpoints de Analytics
+# ----------------------------------------
 def test_daily_sales_endpoint():
     response = client.get("/analytics/daily-sales")
     assert response.status_code == 200

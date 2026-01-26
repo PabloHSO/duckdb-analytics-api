@@ -2,13 +2,17 @@ name: CI - DuckDB Analytics API
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    env:
+      PYTHONPATH: .
+      DUCKDB_PATH: ":memory:"
 
     steps:
       - name: Checkout code
@@ -17,7 +21,8 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
+          cache: "pip"
 
       - name: Install dependencies
         run: |
@@ -27,5 +32,4 @@ jobs:
 
       - name: Run tests with coverage
         run: |
-          export PYTHONPATH=$(pwd)
-          pytest --cov=app --cov-report=term-missing
+          pytest --cov=app --cov-report=term-missing --cov-fail-under=75

@@ -3,7 +3,7 @@ from fastapi import APIRouter
 from prometheus_client import Counter, Histogram, generate_latest
 from starlette.responses import Response
 
-router = APIRouter(prefix="/metrics", tags=["Metrics"])
+router = APIRouter(tags=["Metrics"])
 
 # Contadores e histogramas para métricas Prometheus
 REQUEST_COUNT = Counter(
