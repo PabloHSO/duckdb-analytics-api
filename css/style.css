@@ -7,8 +7,8 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: #f1f1f1;
+    background: radial-gradient(circle at top, #16222a, #0f2027);
+    color: #f2f2f2;
     min-height: 100vh;
     overflow-x: hidden;
 }
@@ -23,27 +23,28 @@ body {
 /* HERO */
 .hero {
     text-align: center;
-    padding: 120px 20px 90px;
+    padding: 130px 20px 90px;
 }
 
 .badge {
     display: inline-block;
     background: rgba(255,255,255,0.1);
-    padding: 8px 18px;
+    padding: 8px 22px;
     border-radius: 50px;
     font-size: 0.85rem;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
+    letter-spacing: 0.5px;
 }
 
 .hero h1 {
-    font-size: 4rem;
+    font-size: 4.2rem;
     font-weight: 900;
     margin-bottom: 20px;
 }
 
 .hero p {
-    font-size: 1.3rem;
-    max-width: 900px;
+    font-size: 1.35rem;
+    max-width: 960px;
     margin: 0 auto 45px;
     opacity: 0.9;
 }
@@ -52,7 +53,7 @@ body {
 .cta-buttons a {
     display: inline-block;
     margin: 10px;
-    padding: 16px 30px;
+    padding: 16px 34px;
     border-radius: 14px;
     text-decoration: none;
     color: #fff;
@@ -62,78 +63,98 @@ body {
 }
 
 .cta-buttons a:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.45);
 }
 
 /* TECH ICONS */
 .tech-icons {
-    margin-top: 50px;
+    margin-top: 55px;
 }
 
 .tech-icons i {
-    font-size: 2rem;
-    margin: 0 12px;
+    font-size: 2.1rem;
+    margin: 0 14px;
     opacity: 0.85;
+}
+
+/* BANNER */
+.banner {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.banner img {
+    max-width: 1100px;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.45);
 }
 
 /* FEATURES */
 .features {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 80px 20px;
+    padding: 90px 20px;
 }
 
 .features h2 {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 50px;
+    font-size: 2.6rem;
+    margin-bottom: 60px;
 }
 
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
+    gap: 32px;
 }
 
 .feature-card {
     background: rgba(255,255,255,0.08);
-    padding: 35px;
-    border-radius: 20px;
+    padding: 40px 35px;
+    border-radius: 22px;
     text-align: center;
-    transition: all 0.3s ease;
+    transition: all 0.35s ease;
 }
 
 .feature-card:hover {
-    transform: translateY(-8px);
-    background: rgba(255,255,255,0.12);
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.13);
 }
 
 .feature-card i {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
+    font-size: 2.3rem;
+    margin-bottom: 22px;
     color: #00c6ff;
 }
 
 /* ARCHITECTURE */
 .architecture {
-    padding: 80px 20px;
+    padding: 90px 20px;
     text-align: center;
 }
 
+.architecture p {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    opacity: 0.85;
+}
+
 .architecture pre {
-    background: rgba(0,0,0,0.4);
-    padding: 30px;
-    border-radius: 20px;
-    max-width: 600px;
-    margin: 40px auto 0;
+    background: rgba(0,0,0,0.45);
+    padding: 35px;
+    border-radius: 22px;
+    max-width: 620px;
+    margin: 0 auto;
     text-align: left;
+    font-size: 0.95rem;
 }
 
 /* FOOTER */
 footer {
     background: #0b1c24;
-    padding: 40px;
+    padding: 45px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -141,30 +162,30 @@ footer {
 }
 
 footer img {
-    width: 120px;
+    width: 130px;
     border-radius: 50%;
     border: 3px solid #00c6ff;
 }
 
 .footer-info h3 {
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
 
 .social a {
     color: #fff;
-    font-size: 1.4rem;
-    margin-right: 15px;
+    font-size: 1.5rem;
+    margin-right: 16px;
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
     .hero h1 {
-        font-size: 2.8rem;
+        font-size: 2.9rem;
     }
 
     footer {
         flex-direction: column;
         text-align: center;
-        gap: 20px;
+        gap: 22px;
     }
 }
