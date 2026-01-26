@@ -1,0 +1,11 @@
+# DuckDB files
+*.duckdb
+*.db
+
+# Python
+__pycache__/
+.pytest_cache/
+
+# Coverage
+.coverage
+htmlcov/
