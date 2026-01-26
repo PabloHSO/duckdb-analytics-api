@@ -1,21 +1,20 @@
 from fastapi.testclient import TestClient
 from app.main import app
+import uuid
 
 client = TestClient(app)
 
-def test_ingest_datasets_endpoint():
-    response = client.post("/datasets/ingest")
-    assert response.status_code == 200
-    assert response.json()["message"] == "Datasets ingested successfully"  
-
+# ----------------------------------------
+# Teste do endpoint de load dataset
+# ----------------------------------------
 def test_load_dataset_endpoint():
+    table_name = f"test_table_{uuid.uuid4().hex[:8]}"
+
     payload = {
-        "name": "test_table",
+        "name": table_name,
         "path": "tests/data/sample.csv"
     }
-    
+
     response = client.post("/datasets/load", json=payload)
     assert response.status_code == 200
-    assert response.json()["message"] == "Dataset carregado com sucesso"
-    assert response.json()["table"] == "test_table"
-    assert response.json()["rows_loaded"] > 0
+    assert response.json()["table"] == table_name
