@@ -2,10 +2,11 @@ from app.core.database import get_connection
 from typing import List, Dict
 from datetime import date
 
+
 class AnalyticsService:
 
     @staticmethod
-    def daily_sales() -> List[Dict]:
+    def get_daily_sales() -> List[Dict]:
         conn = get_connection()
         query = """
             SELECT
@@ -17,33 +18,13 @@ class AnalyticsService:
             ORDER BY created_at
         """
         rows = conn.execute(query).fetchall()
-
         return [
             {"date": r[0], "total_sales": r[1], "orders": r[2]}
             for r in rows
         ]
 
     @staticmethod
-    def top_users(limit: int = 5) -> List[Dict]:
-        conn = get_connection()
-        query = """
-            SELECT
-                user_id,
-                SUM(total_amount) AS total_spent
-            FROM sales
-            GROUP BY user_id
-            ORDER BY total_spent DESC
-            LIMIT ?
-        """
-        rows = conn.execute(query, [limit]).fetchall()
-
-        return [
-            {"user_id": r[0], "total_spent": r[1]}
-            for r in rows
-        ]
-
-    @staticmethod
-    def monthly_revenue() -> List[Dict]:
+    def get_monthly_revenue() -> List[Dict]:
         conn = get_connection()
         query = """
             SELECT
@@ -54,16 +35,12 @@ class AnalyticsService:
             ORDER BY month
         """
         rows = conn.execute(query).fetchall()
-
-        return [
-            {"month": r[0], "revenue": r[1]}
-            for r in rows
-        ]
+        return [{"month": r[0], "revenue": r[1]} for r in rows]
 
     @staticmethod
     def total_revenue(
         start_date: date | None = None,
-        end_date: date | None = None
+        end_date: date | None = None,
     ) -> float:
         conn = get_connection()
 
@@ -81,11 +58,27 @@ class AnalyticsService:
     def revenue_by_day() -> List[Dict]:
         conn = get_connection()
         query = """
-            SELECT created_at, SUM(total_amount) AS revenue
+            SELECT
+                created_at AS date,
+                SUM(total_amount) AS revenue
             FROM sales
             GROUP BY created_at
             ORDER BY created_at
         """
         rows = conn.execute(query).fetchall()
-
         return [{"date": r[0], "revenue": r[1]} for r in rows]
+
+    @staticmethod
+    def top_users(limit: int = 5) -> List[Dict]:
+        conn = get_connection()
+        query = """
+            SELECT
+                user_id,
+                SUM(total_amount) AS total_spent
+            FROM sales
+            GROUP BY user_id
+            ORDER BY total_spent DESC
+            LIMIT ?
+        """
+        rows = conn.execute(query, [limit]).fetchall()
+        return [{"user_id": r[0], "total_spent": r[1]} for r in rows]
