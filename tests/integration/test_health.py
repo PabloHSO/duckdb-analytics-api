@@ -3,9 +3,6 @@ from app.main import app
 
 client = TestClient(app)
 
-# ----------------------------------------
-# Teste do endpoint de healthcheck 
-# ----------------------------------------
 def test_healthcheck():
     response = client.get("/health")
     assert response.status_code == 200

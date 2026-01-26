@@ -16,11 +16,11 @@ def create_app() -> FastAPI:
     )
 
     # Rotas
-    app.include_router(health_router, prefix="/health", tags=["Health"])
-    app.include_router(dataset_router, prefix="/datasets", tags=["Datasets"])
-    app.include_router(query_router, prefix="/queries", tags=["Queries"])
-    app.include_router(analytics_router, prefix="/analytics", tags=["Analytics"])
-    app.include_router(metrics_router, prefix="/metrics", tags=["Metrics"])
+    app.include_router(health_router)
+    app.include_router(dataset_router)
+    app.include_router(query_router)
+    app.include_router(analytics_router)
+    app.include_router(metrics_router)
 
     # Configuração do logging
     setup_logging()
