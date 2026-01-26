@@ -1,0 +1,12 @@
+# Define os serviços do Docker Compose
+services:
+  api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile # Caminho para o Dockerfile
+    container_name: duckdb_analytics_api # Nome do contêiner
+    ports:
+      - "8000:8000" # Mapeia a porta 8000 do host para a porta 8000 do contêiner
+    volumes:
+      - ./data:/app/data # Monta o volume de dados
+    restart: unless-stopped # Reinicia o contêiner a menos que seja parado manualmente
