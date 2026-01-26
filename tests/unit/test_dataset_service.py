@@ -10,7 +10,7 @@ def test_list_datasets_returns_list():
 # ----------------------------------------
 # Teste - Adiciona um novo dataset.
 # ----------------------------------------
-def test_add_dataset_creates_file(tmp_path):
+def test_add_dataset_creates_file(tmp_path): 
     dataset_name = "test_dataset"
     dataset_path = tmp_path / f"{dataset_name}.csv"
 

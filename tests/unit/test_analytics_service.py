@@ -37,7 +37,7 @@ def test_total_revenue_with_no_data():
 # ----------------------------------------
 # Teste - Retorna as vendas diárias agregadas.
 # ----------------------------------------
-def test_get_daily_sales_structure():
+def test_get_daily_sales_structure(): 
     result = AnalyticsService.get_daily_sales()
     assert isinstance(result, list)
     if result:

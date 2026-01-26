@@ -4,7 +4,7 @@ from app.main import app
 client = TestClient(app)
 
 # ----------------------------------------
-# Teste - Retorna as vendas diárias agregadas.
+# Teste - Retorna as vendas diárias agregadas. 
 # ----------------------------------------
 def test_daily_sales_endpoint():
     response = client.get("/analytics/daily-sales")
