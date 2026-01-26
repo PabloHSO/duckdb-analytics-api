@@ -3,7 +3,7 @@
 <!-- ===================== -->
 
 <p align="center">
-  <img src="docs/banner.png" alt="DuckDB Analytics API Banner" width="100%">
+  <img src="docs/images/banner_duckdb.png" alt="DuckDB Analytics API Banner" width="100%">
 </p>
 
 <h1 align="center">🚀 DuckDB Analytics API</h1>
@@ -78,7 +78,6 @@ Client / Browser
 
 Diagrama (Mermaid)
 ```mermaid
-Copiar código
 flowchart LR
     Client --> FastAPI
     FastAPI --> DuckDB
@@ -205,8 +204,12 @@ histogram_quantile(
 
 ## 📈 Dashboards Grafana
 <!-- ===================== --> <!-- GRAFANA SCREENSHOTS --> <!-- ===================== --> 
-<p align="center"> <img src="docs/grafana-dashboard-1.png" alt="Grafana Dashboard Overview" width="90%"> </p> 
-<p align="center"> <img src="docs/grafana-dashboard-2.png" alt="Grafana Latency Panel" width="90%"> </p>
+
+<p align="center"> <img src="docs/images/request_por_status_code.png" alt="Request por Status Code" width="90%"> </p> 
+<p align="center"> <img src="docs/images/taxa_requisicao_ps.png" alt="Taxa de Requisição por segundo" width="90%"> </p>
+<p align="center"> <img src="docs/images/total_req_http.png" alt="Total de Requisições HTTP" width="90%"> </p>
+<p align="center"> <img src="docs/images/latencia_p95.png" alt="Latência P95" width="90%"> </p>
+<p align="center"> <img src="docs/images//req_por_endpoint.png" alt="Requisições por Endpoint" width="90%"> </p>
 
 📌 Os dashboards demonstram tráfego, latência e uso por endpoint em tempo real.
 
