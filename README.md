@@ -6,6 +6,7 @@
   <img src="docs/images/banner_duckdb.png" alt="DuckDB Analytics API Banner" width="100%">
 </p>
 
+<h3 align="center">🚀 DuckDB Analytics API</h3>
 
 <p align="center">
   <b>Embedded Analytics API com FastAPI, DuckDB, Prometheus e Grafana</b><br>
@@ -22,9 +23,11 @@
   <img src="https://img.shields.io/github/repo-size/PabloHSO/duckdb-analytics-api?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python" />
   <img src="https://img.shields.io/badge/FastAPI-0.128.0-teal?style=for-the-badge&logo=fastapi" />
+  <img src="https://img.shields.io/badge/DuckDB-Embedded%20Analytics-yellow?style=for-the-badge&logo=duckdb" />
   <img src="https://img.shields.io/badge/Docker-Enabled-blue?style=for-the-badge&logo=docker" />
   <img src="https://img.shields.io/badge/Prometheus-Metrics-orange?style=for-the-badge&logo=prometheus" />
   <img src="https://img.shields.io/badge/Grafana-Dashboards-orange?style=for-the-badge&logo=grafana" />
+
 </p>
 
 ---
@@ -41,7 +44,12 @@ A **DuckDB Analytics API** é uma API analítica moderna baseada em **Embedded A
 - Execução containerizada com **Docker**
 - Pipeline de CI com **GitHub Actions**
 
-> 🎯 Projeto ideal como **case de portfólio** para Backend, Data, Platform ou SRE.
+---
+
+## 📌 GitPage
+
+- 🌐 [Delivery API - GitPage](https://pablohso.github.io/PabloHSO/)
+- 🌐 [Pablo - GitPage](https://pablohso.github.io/PabloHSO/)
 
 ---
 
@@ -171,6 +179,8 @@ docker-compose up --build
 - Swagger: http://localhost:8000/docs
 - Métricas Prometheus: http://localhost:8000/metrics
 
+---
+
 ## 🧪 Testes & Cobertura
 Executar testes localmente:
 
@@ -178,9 +188,11 @@ Executar testes localmente:
 pytest --cov=app --cov-report=term-missing
 ```
 
-✔️ Testes unitários
-✔️ Testes de integração
-✔️ Cobertura de código
+- ✔️ Testes unitários
+- ✔️ Testes de integração
+- ✔️ Cobertura de código
+
+---
 
 ## 📊 Observabilidade
 - Métricas expostas
@@ -200,6 +212,7 @@ histogram_quantile(
   sum(rate(http_request_latency_seconds_bucket[5m])) by (le)
 )
 ```
+---
 
 ## 📈 Dashboards Grafana
 <!-- ===================== --> <!-- GRAFANA SCREENSHOTS --> <!-- ===================== --> 
@@ -208,9 +221,11 @@ histogram_quantile(
 <p align="center"> <img src="docs/images/taxa_requisicao_ps.png" alt="Taxa de Requisição por segundo" width="90%"> </p>
 <p align="center"> <img src="docs/images/total_req_http.png" alt="Total de Requisições HTTP" width="90%"> </p>
 <p align="center"> <img src="docs/images/latencia_p95.png" alt="Latência P95" width="90%"> </p>
-<p align="center"> <img src="docs/images//req_por_endpoint.png" alt="Requisições por Endpoint" width="90%"> </p>
+<p align="center"> <img src="docs/images/req_por_endpoint.png" alt="Requisições por Endpoint" width="90%"> </p>
 
 📌 Os dashboards demonstram tráfego, latência e uso por endpoint em tempo real.
+
+---
 
 ## 🔄 CI/CD
 **Pipeline configurado com GitHub Actions:**
@@ -224,6 +239,8 @@ Arquivo:
 .github/workflows/python-app.yml
 ```
 
+---
+
 ## 🎯 Objetivo do Projeto
 Este projeto foi desenvolvido para demonstrar:
 
@@ -233,8 +250,8 @@ Este projeto foi desenvolvido para demonstrar:
 - Testes automatizados
 - Práticas modernas de DevOps
 
-👤 Autor
-Pablo H. S. O.
+### 👤 Autor
+**Pablo H. S. O.**
 
 - GitHub: https://github.com/PabloHSO
 - LinkedIn: https://linkedin.com/in/pablohsilveira
