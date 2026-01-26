@@ -48,7 +48,7 @@ A **DuckDB Analytics API** é uma API analítica moderna baseada em **Embedded A
 
 ## 📌 GitPage
 
-- 🌐 [Delivery API - GitPage](https://pablohso.github.io/PabloHSO/)
+- 🌐 [DuckDB Analytics API - GitPage](https://pablohso.github.io/PabloHSO/)
 - 🌐 [Pablo - GitPage](https://pablohso.github.io/PabloHSO/)
 
 ---
