@@ -1,0 +1,55 @@
+########################################
+#        Linguagens Principais           #
+########################################
+
+*.py            linguist-detectable=true
+*.html          linguist-detectable=true
+*.css           linguist-detectable=true
+*.js            linguist-detectable=true
+
+########################################
+#        Infra / Configuração           #
+########################################
+
+Dockerfile      linguist-detectable=true
+*.yml           linguist-detectable=true
+*.yaml          linguist-detectable=true
+
+########################################
+#        Estrutura do Projeto           #
+########################################
+
+# Código principal
+app/**          linguist-detectable=true
+
+# GitPage / documentação visual
+docs/**         linguist-detectable=true
+
+########################################
+#        Observabilidade & CI           #
+########################################
+
+.github/**      linguist-detectable=true
+docker/**       linguist-detectable=true
+
+########################################
+#        Dados (NÃO contar)             #
+########################################
+
+data/**         linguist-vendored=true
+*.csv           linguist-vendored=true
+*.parquet       linguist-vendored=true
+
+########################################
+#        Cache / Build / Artefatos      #
+########################################
+
+__pycache__/**  linguist-vendored=true
+*.pyc           linguist-vendored=true
+*.log           linguist-vendored=true
+
+########################################
+#        Testes (contar sim)            #
+########################################
+
+tests/**        linguist-detectable=true
