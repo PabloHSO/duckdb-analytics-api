@@ -88,7 +88,7 @@ body {
 
 .top-banner img {
     width: 100%;
-    max-width: 800px; /* correção de tamanho */
+    max-width: 800px; /* Correção de tamanho */
     border-radius: 28px;
     box-shadow:
         0 25px 60px rgba(0, 0, 0, 0.55),
