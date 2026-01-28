@@ -1,163 +1,170 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <title>DuckDB Analytics API | Embedded Analytics Platform</title>
+  <meta charset="UTF-8" />
+  <title>DuckDB Analytics API | Embedded Analytics Platform</title>
 
-    <!-- SEO -->
-    <meta name="description" content="Embedded Analytics API com FastAPI, DuckDB, Prometheus e Grafana. Projeto profissional focado em performance, observabilidade e boas práticas.">
-    <meta name="author" content="Pablo Henrique Silveira">
+  <!-- SEO -->
+  <meta name="description" content="Embedded Analytics API com FastAPI, DuckDB, Prometheus e Grafana. Projeto profissional focado em performance, observabilidade e arquitetura moderna.">
+  <meta name="author" content="Pablo Henrique Silveira">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <!-- Open Graph -->
+  <meta property="og:title" content="DuckDB Analytics API">
+  <meta property="og:description" content="Embedded Analytics Platform com FastAPI, DuckDB, Prometheus e Grafana">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="static/css/style.css">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- Particles -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- VANTA -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
 </head>
 
 <body>
-<div id="particles-js"></div>
+
+<!-- VANTA BACKGROUND -->
+<div id="vanta-bg"></div>
+
+<!-- TOP BANNER -->
+<section class="top-banner">
+  <img src="images/banner_duckdb.png" alt="DuckDB Analytics Platform Banner">
+</section>
 
 <!-- HERO -->
-<header class="hero">
-    <span class="badge">Embedded Analytics Platform</span>
+<header class="hero glass">
+  <span class="badge">Embedded Analytics Platform</span>
 
-    <h1>DuckDB Analytics API</h1>
+  <h1>DuckDB Analytics API</h1>
 
-    <p>
-        API analítica moderna baseada em <strong>FastAPI</strong>, 
-        <strong>DuckDB</strong>, <strong>Prometheus</strong> e <strong>Grafana</strong>.
-        <br>
-        Foco em performance, observabilidade e arquitetura profissional.
-    </p>
+  <p>
+    Plataforma de <strong>Analytics embarcado</strong> construída com
+    <strong>FastAPI</strong>, <strong>DuckDB</strong>,
+    <strong>Prometheus</strong> e <strong>Grafana</strong>.
+    <br>
+    Projetada para <b>performance analítica</b>,
+    <b>observabilidade real</b> e
+    <b>arquitetura profissional</b>.
+  </p>
 
-    <div class="cta-buttons">
-        <a href="https://github.com/PabloHSO/duckdb-analytics-api" target="_blank">
-            <i class="fab fa-github"></i> Código no GitHub
-        </a>
-        <a href="#architecture">
-            <i class="fas fa-diagram-project"></i> Arquitetura
-        </a>
-    </div>
+  <div class="cta-buttons">
+    <a href="https://github.com/PabloHSO/duckdb-analytics-api" target="_blank">
+      <i class="fab fa-github"></i> Ver Código
+    </a>
+    <a href="#architecture" class="secondary">
+      <i class="fas fa-diagram-project"></i> Arquitetura
+    </a>
+  </div>
 
-    <div class="tech-icons">
-        <i class="fab fa-python" title="Python"></i>
-        <i class="fas fa-bolt" title="FastAPI"></i>
-        <i class="fas fa-database" title="DuckDB"></i>
-        <i class="fab fa-docker" title="Docker"></i>
-        <i class="fas fa-chart-line" title="Prometheus"></i>
-        <i class="fas fa-chart-area" title="Grafana"></i>
-    </div>
+  <div class="tech-icons">
+    <i class="fab fa-python"></i>
+    <i class="fas fa-bolt"></i>
+    <i class="fas fa-database"></i>
+    <i class="fab fa-docker"></i>
+    <i class="fas fa-chart-line"></i>
+    <i class="fas fa-chart-area"></i>
+  </div>
 </header>
 
 <!-- FEATURES -->
 <section class="features">
-    <h2>🚀 Principais Destaques</h2>
+  <h2>O que este projeto demonstra</h2>
 
-    <div class="features-grid">
-        <div class="feature-card">
-            <i class="fas fa-database"></i>
-            <h3>Embedded Analytics</h3>
-            <p>Consultas analíticas de alta performance usando DuckDB como engine OLAP embedded.</p>
-        </div>
-
-        <div class="feature-card">
-            <i class="fas fa-gauge-high"></i>
-            <h3>Alta Performance</h3>
-            <p>Arquitetura otimizada para leitura analítica, baixa latência e eficiência.</p>
-        </div>
-
-        <div class="feature-card">
-            <i class="fas fa-chart-line"></i>
-            <h3>Observabilidade</h3>
-            <p>Métricas reais com Prometheus e dashboards avançados no Grafana.</p>
-        </div>
-
-        <div class="feature-card">
-            <i class="fas fa-vial"></i>
-            <h3>Testes Automatizados</h3>
-            <p>Testes unitários e de integração com Pytest e cobertura de código.</p>
-        </div>
-
-        <div class="feature-card">
-            <i class="fas fa-cubes"></i>
-            <h3>Arquitetura Limpa</h3>
-            <p>Separação clara de responsabilidades seguindo boas práticas.</p>
-        </div>
-
-        <div class="feature-card">
-            <i class="fas fa-gear"></i>
-            <h3>CI & Docker</h3>
-            <p>Pipeline CI com GitHub Actions e execução containerizada.</p>
-        </div>
+  <div class="features-grid">
+    <div class="feature-card glow">
+      <i class="fas fa-database"></i>
+      <h3>Embedded OLAP</h3>
+      <p>DuckDB como engine analítica embarcada, eliminando dependências externas.</p>
     </div>
+
+    <div class="feature-card glow">
+      <i class="fas fa-gauge-high"></i>
+      <h3>Alta Performance</h3>
+      <p>Consultas analíticas rápidas e eficientes.</p>
+    </div>
+
+    <div class="feature-card glow">
+      <i class="fas fa-chart-line"></i>
+      <h3>Observabilidade</h3>
+      <p>Métricas HTTP, latência P95 e tráfego monitorado.</p>
+    </div>
+
+    <div class="feature-card glow">
+      <i class="fas fa-vial"></i>
+      <h3>Testes</h3>
+      <p>Testes unitários e de integração com Pytest.</p>
+    </div>
+
+    <div class="feature-card glow">
+      <i class="fas fa-cubes"></i>
+      <h3>Clean Architecture</h3>
+      <p>Separação clara de responsabilidades.</p>
+    </div>
+
+    <div class="feature-card glow">
+      <i class="fas fa-gear"></i>
+      <h3>CI & Docker</h3>
+      <p>Execução consistente com pipelines automatizados.</p>
+    </div>
+  </div>
 </section>
 
 <!-- ARCHITECTURE -->
 <section class="architecture" id="architecture">
-    <h2>🏗️ Arquitetura</h2>
+  <h2>Arquitetura da Plataforma</h2>
 
-    <p>
-        Plataforma construída seguindo princípios modernos de backend e observabilidade.
-    </p>
+  <p>Desenho focado em simplicidade, performance e observabilidade.</p>
 
-    <div class="architecture-diagram">
-        <pre>
+  <pre>
 Client
   │
-  ▼
 FastAPI
   │
-  ├── Services
+  ├─ Routers
+  ├─ Services
   │
-  ├── DuckDB (Embedded OLAP)
+  ├─ DuckDB (Embedded)
   │
-  └── Metrics (/metrics)
-          │
-          ▼
-      Prometheus
-          │
-          ▼
-        Grafana
-        </pre>
-    </div>
+  └─ /metrics
+        │
+    Prometheus
+        │
+      Grafana
+  </pre>
 </section>
 
 <!-- FOOTER -->
 <footer>
-    <div class="footer-info">
-        <h3>Pablo Henrique Silveira</h3>
-        <p>Backend & Data Engineer</p>
+  <div class="footer-info">
+    <h3>Pablo Henrique Silveira</h3>
+    <p>Backend & Data Engineer</p>
 
-        <div class="social">
-            <a href="https://www.linkedin.com/in/pablohsilveira" target="_blank">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/PabloHSO" target="_blank">
-                <i class="fab fa-github"></i>
-            </a>
-        </div>
+    <div class="social">
+      <a href="https://www.linkedin.com/in/pablohsilveira" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/PabloHSO" target="_blank"><i class="fab fa-github"></i></a>
     </div>
+  </div>
 
-    <img src="images/eu6.jpg" alt="Foto de Pablo">
+  <img src="images/eu6.jpg" alt="Foto de Pablo">
 </footer>
 
-<!-- Particles config -->
 <script>
-particlesJS("particles-js", {
-    particles: {
-        number: { value: 70 },
-        color: { value: "#ffffff" },
-        size: { value: 3 },
-        move: { speed: 1.5 },
-        line_linked: { enable: true, opacity: 0.15 }
-    }
+VANTA.WAVES({
+  el: "#vanta-bg",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  color: 0x0b3c49,
+  shininess: 45,
+  waveHeight: 18,
+  waveSpeed: 0.6,
+  zoom: 0.85
 });
 </script>
 
