@@ -33,6 +33,7 @@ body {
     rgba(5,11,18,0.85)
   );
   backdrop-filter: blur(10px);
+  margin-top: 40px;
 }
 
 /* BADGE */
